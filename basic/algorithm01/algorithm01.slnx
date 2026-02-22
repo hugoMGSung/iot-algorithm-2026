@@ -9,6 +9,7 @@
   <Project Path="app04/app04.vcxproj" Id="32fc45b7-f12a-4778-9fc9-8171b89fb843" />
   <Project Path="app05/app05.vcxproj" Id="4082c938-d359-4a02-9ef3-bc3f0994974e" />
   <Project Path="app06/app06.vcxproj" Id="6596cde2-d410-4a58-a45d-1b27cc22e179" />
+  <Project Path="app07/app07.vcxproj" Id="5a8a8811-ae57-4538-b9b2-d87d6fe299fb" />
   <Project Path="pointer01/pointer01.vcxproj" Id="8ea93e77-9340-4b87-9c91-7788fcb198bb" />
   <Project Path="pointer02/pointer02.vcxproj" Id="271851a5-2023-448f-bbcb-4edd6805feb8" />
   <Project Path="pointer03/pointer03.vcxproj" Id="ff532f57-d2d7-4e5a-9b2c-c2cf3377101a" />
