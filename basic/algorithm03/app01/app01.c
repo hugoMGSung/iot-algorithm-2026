@@ -16,6 +16,7 @@ int main(void) {
 	int menu, x, ch;
 
 	while (1) {
+		menu = -1; // 
 		printf("현재 데이터 수 : %d / %d\n", Size(&que), Capacity(&que));
 		printf("(1)인큐, (2)디큐, (3)피크, (4)출력, (0)종료 > "); scanf("%d", &menu);
 
