@@ -16,9 +16,13 @@ int main(void) {
 
 	while (1) { // 무한루프
 		// 스택 기능 구현
-		int menu, x;
+		int menu, x, ch;
 		printf("현재 데이터수: %d / %d\n", Size(&st), Capacity(&st));
 		printf("(1)푸시, (2)팝, (3)피크, (4)출력, (5)검색, (6)클리어, (0)종료 > "); scanf("%d", &menu);
+
+		// 잘못된 키보드 입력 버퍼를 제거
+		// 기초 프로그래밍 주소록 토이프로젝트 소스 참조
+		while ((ch = getchar()) != '\n' && ch != EOF) {}
 
 		if (menu == 0) break; // 종료 처리
 
