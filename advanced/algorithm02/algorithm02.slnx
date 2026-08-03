@@ -1,0 +1,12 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="sol05-04-pre/sol05-04-pre.vcxproj" />
+  <Project Path="sol05-04/sol05-04.vcxproj" />
+  <Project Path="sol05-4-04/sol05-4-04.vcxproj" />
+  <Project Path="sol06-3-08/sol06-3-08.vcxproj" />
+  <Project Path="sol06-4-12/sol06-4-12.vcxproj" />
+  <Project Path="sol14-4-14/sol14-4-14.vcxproj" />
+</Solution>

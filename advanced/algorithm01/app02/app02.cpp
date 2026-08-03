@@ -1,5 +1,6 @@
-﻿// app02.cpp : STL
-//
+﻿// app02.cpp : STL 컨테이너 타입 활용
+// Call by Value/Reference
+// 반복자
 
 #include <iostream>
 // 2. 필요 프리프로세서 추가

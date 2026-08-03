@@ -112,12 +112,122 @@ https://school.programmers.co.kr/
 
 - 빌트인 데이터 타입 - [소스](./advanced/algorithm01/app01/app01.cpp)
 - STL - [소스](./advanced/algorithm01/app02/app02.cpp)
+
   - 특정 타입을 한정하기 않는 라이브러리
   - `컨데이터`, `알고리즘`, `반복자`
-- STL 컨테이너
-- STL 알고리즘
-- 함수
-- 코딩 테스트 코드 구현 노하우
+- STL 컨테이너 - C#, Java, Python에서 **Collection** 으로 호칭 [소스](./advanced/algorithm01/app03/app03.cpp)
+
+  - 시퀀스 타입 - `벡터`, 리스트, 배열, 데크, ...
+  - 연관 타입 - `셋`, `맵`, 멀티셋, 멀티맵, ...
+  - 어댑터 타입 - 스택, 큐, 우선순위 큐
+- STL 알고리즘 - 정렬, 검색 등 기본적인 알고리즘 [소스](./advanced/algorithm01/app04/app04.cpp)
+
+  - `find()`, `count()`, for_each(), equal(), any_of(), ...
+  - copy(), replace(), fill(), transform(), ...
+  - reverse(), remove(), `unique()`, rotate(), ...
+  - `sort()`, stable_sort(), partial_sort(), ...
+  - `binary_search()`, lower_bound(), upper_bound(), set_union(), ...
+  - `next_permutation()`, accumulate(), partial_sum(), ...
+  - `max_element()`, `min_element()`, clamp(), ...
+- 함수 = 메서드 - [소스](./advanced/algorithm01/app05/app05.cpp)
+- 코딩 테스트 코드 구현 노하우 [소스]()
+
+  - 조기 반환 - 함수 끝에 도달전에 반환하는 법
+  - 보호 구문 - 예외처리 코드 추가하는 법(try ~ catch 아님)
+  - 의미있는 변수명 사용
+  - continue 잘 쓸 것 -> 속도 개선 $O(N^2)$ -> $O(N logN)$
+  - 한가지 일만 하는 함수를 만들기
+  - STL 적극 활용
+
+## 코딩 테스트 완전 정복
+
+### 배열
+
+- 배열 선언 : arr[]
+- 배열 원소 접근: arr[1]
+- 배열 원소별 주소 : &arr[0]
+
+#### 배열 시간복잡도
+
+- arr[1] : $O(1)$
+- 배열의 맨앞 원소 삽입 : $O(N)$
+- 배열 중간에 원소 삽입 : $O(N)$
+
+#### 배열 선택 고려점
+
+- 배열 초기에 메모리 할당할 수 있는 크기 확인
+- 로직 중간에 데이터 삽입/삭제 등 많은지 확인
+- 배열사용 최소화 -> STL 벡터를 사용 권장
+
+#### 코딩 테스트 연습
+
+배열에서 두 수 뽑아서 더하기 - [소스](./advanced/algorithm02/sol05-04/sol05-04.cpp)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/68644?language=cpp
+
+![](assets/20260803_103134_image.png)
+
+![](assets/20260803_103343_image.png)
+
+모의고사 - [소스](./advanced/algorithm02/sol05-4-04/sol05-4-04.cpp)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/42840
+
+![](assets/20260803_112150_image.png)
+
+- 기본 테스트 통과
+
+![](assets/20260803_112206_image.png)
+
+- 테스트 케이스 통과
+
+### 스택
+
+- LIFO. push(), pop(), is_Full(), is_Empty(), top() ...
+
+#### 코딩 테스트 연습
+
+괄호 짝 맞추기 - [소스](./advanced/algorithm02/sol06-3-08/sol06-3-08.cpp)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/12909?language=cpp#
+
+![](assets/20260803_121125_image.png)
+
+- 테스트 케이스 추가
+
+![](assets/20260803_121231_image.png)
+
+- 효율성 테스트(시간복잡도 체크)
+
+#### 모의 테스트 연습
+
+주식가격 - [소스](./advanced/algorithm02/sol06-4-12/sol06-4-12.cpp)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/42584
+
+- prices [1,2,3,2,3] 일 경우 주식 가격이 떨어지지 않는 시간 result [4,3,1,1,0]
+  - 인덱스 0, 가격 1의 경우 마지막까지 가격이 떨어지지 않음 -> 4초
+  - 인덱스 1, 가격 2의 경우 마지막까지 2이하로 떨어지지 않음 -> 3초
+  - 인덱스 2, 가격 3의 경우 1초 후에 2로 떨어짐 -> 1초
+
+- 스택에 올라가는 가격까지 계속 push
+  - 떨어지는 가격에서 스택 top 값과 비교, pop
+  - 다음 top의 값이 작으면 push
+  - 반복 후 들어있는 인덱스를 pop, 이전 pop의 인덱스 빼기 다음 pop 인덱스 하면 길이로 확정
+
+
+표편집- [소스](./)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/81303?language=cpp
+
+- command : `U k`(위로 k칸), `D k`(아래로 k칸), `C`(삭제), `Z`(복구)
+- 삭제를 위해서, up, down 배열이 필요
+- 맨위, 맨아래 데이터 접근을 위해서 가상공간이 하나씩 필요
+
+- C(삭제) 시 up[down[k]] = up[k], down[up[k]] = down[k] 로 변경 필요
+- 삭제한 요소 스택에 push()
+
+
 
 ### 코딩 테스트 저자의 글
 

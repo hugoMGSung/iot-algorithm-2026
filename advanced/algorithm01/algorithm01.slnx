@@ -1,8 +1,14 @@
 <Solution>
   <Configurations>
+    <Platform Name="Any CPU" />
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="app01/app01.vcxproj" />
-  <Project Path="app02/app02.vcxproj" />
+  <Project Path="app01/app01.vcxproj" Id="bceb0ad4-4ccd-4024-bdd1-357ae1564ce2" />
+  <Project Path="app02/app02.vcxproj" Id="05b713f3-5217-491f-87c2-69be91e85754" />
+  <Project Path="app03/app03.vcxproj" Id="8592be87-4950-4a09-9ff0-a6afb2cd568f" />
+  <Project Path="app04/app04.vcxproj" Id="a8a565c5-7707-4629-bb87-fac201c268c6" />
+  <Project Path="app05/app05.vcxproj" Id="68b98d5f-235f-4b50-b33a-1c0cd3660238" />
+  <Project Path="app06/app06.vcxproj" Id="e024ef4e-2341-4dff-b9d9-229c5e11adfb" />
+  <Project Path="ref03/ref03.csproj" />
 </Solution>
