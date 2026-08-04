@@ -8,5 +8,8 @@
   <Project Path="sol05-4-04/sol05-4-04.vcxproj" />
   <Project Path="sol06-3-08/sol06-3-08.vcxproj" />
   <Project Path="sol06-4-12/sol06-4-12.vcxproj" />
+  <Project Path="sol07-2-15/sol07-2-15.vcxproj" />
+  <Project Path="sol07-3-16/sol07-3-16.vcxproj" />
+  <Project Path="sol08-5-20/sol08-5-20.vcxproj" />
   <Project Path="sol14-4-14/sol14-4-14.vcxproj" />
 </Solution>

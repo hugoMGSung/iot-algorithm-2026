@@ -206,28 +206,119 @@ https://school.programmers.co.kr/learn/courses/30/lessons/12909?language=cpp#
 https://school.programmers.co.kr/learn/courses/30/lessons/42584
 
 - prices [1,2,3,2,3] 일 경우 주식 가격이 떨어지지 않는 시간 result [4,3,1,1,0]
+
   - 인덱스 0, 가격 1의 경우 마지막까지 가격이 떨어지지 않음 -> 4초
   - 인덱스 1, 가격 2의 경우 마지막까지 2이하로 떨어지지 않음 -> 3초
   - 인덱스 2, 가격 3의 경우 1초 후에 2로 떨어짐 -> 1초
-
 - 스택에 올라가는 가격까지 계속 push
+
   - 떨어지는 가격에서 스택 top 값과 비교, pop
   - 다음 top의 값이 작으면 push
   - 반복 후 들어있는 인덱스를 pop, 이전 pop의 인덱스 빼기 다음 pop 인덱스 하면 길이로 확정
 
-
-표편집- [소스](./)
+표편집- [소스](./advanced/algorithm02/sol14-4-14/sol06-4-14.cpp)
 
 https://school.programmers.co.kr/learn/courses/30/lessons/81303?language=cpp
 
 - command : `U k`(위로 k칸), `D k`(아래로 k칸), `C`(삭제), `Z`(복구)
 - 삭제를 위해서, up, down 배열이 필요
 - 맨위, 맨아래 데이터 접근을 위해서 가상공간이 하나씩 필요
+- 중요 로직
 
-- C(삭제) 시 up[down[k]] = up[k], down[up[k]] = down[k] 로 변경 필요
-- 삭제한 요소 스택에 push()
+  - C(삭제) 시 k(삭제할 인덱스) -> `up[down[k]] = up[k]`, `down[up[k]] = down[k]` 로 변경 필요
+  - 삭제한 요소 스택에 push()
+  - Z(복구) 시 restore(복구할 인덱스) -> `up[down[restore]]`, `down[up[restore]]` 복구
+  - 복구한 요소 스택에서 pop()
+- C++ STL 스택과 다른 언어의 스택과 차이점
+
+  - 값 조회와 삭제를 분리
+  - stack.pop() 값을 할당할 수 없음!  ~~`int r = stack.pop()`~~
+  - stack.top() 으로 값을 가져온 뒤
+  - stack.pop() 으로 스택값을 지워야 함
+
+![](assets/20260804_102048_image.png)
+
+교재에서는 $O(N)$ 으로 설명. $O(N logN)$ 정도로 예상
+
+#### 풀이 결과 예제
+
+![](assets/20260804_103042_image.png)
+
+- 테스트 케이스 통과, 효율성 테스트 실패
+
+### 큐
+
+#### 큐 ADT
+
+- isFull(), isEmpty(), push(), pop(), front, rear
+- 스택과 유사한 함수명 사용
+
+#### 코딩테스트 연습
+
+요세푸스 문제 - 소스
+
+- 1,2,3,4,5 의 경우
+  - 1번째 : 3, 4, 5, 1
+  - 2번째 : 5, 1, 3
+  - 3번째 : 3, 5
+  - 4번째 : 3
+
+#### 모의테스트
+
+카드뭉치 - [소스](./advanced/algorithm02/sol07-3-16/sol07-3-16.cpp)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/159994?language=cpp
+
+- cards1, cards2, goal을 모두 큐로 생성
+- goal에 데이터가 없을때까지 반복
+- cards1 에 맨앞데이터와 goal 맨앞데이터가 동일하면 cards1.pop(), goal.pop()
+- cards2 에 맨앞데이터와 goal 맨앞데이터가 동일하면 cards2.pop(), goal.pop()
+- 일치하는 cards 내용이 없으면 종료
+- 반복 완료 후 goal에 데이터가 없으면 "Yes"
+
+### 해시
+
+키와 값의 쌍으로 저장후 빠른 데이터 검색을 제공하는 자료구조, 딕셔너리, JSON...
+
+- **해시** : 데이터를 빠르게 찾기 위한 기술
+- `딕셔너리` : 키(Key)-값(Value)로 저장하는 자료구조. 해시 테이블로 구현되어 있음
 
 
+#### 해시 함수
+
+키에 대한 인덱스를 구하는 함수
+
+- 나눗셈법 : x % k
+- 곱셈법 : `나눗셈법` 에 특수값 더 곱한 방법
+- 문자열해싱 : 각 문자열 자리마다 승수를 곱한 합산. 무리하게 큰 수가 도출될 수 있음
+  - 각 자리마다 나눗셈법 사용. 오버플로 방지
+
+#### 충돌 처리
+
+- 체이닝방법 : 해시테이블 한 행(버킷)에 연결리스트(Linked-List)로 여러값을 나열하는 방법
+  - 공간활용도, 검색성능 떨어짐
+- 개방주소 : 해시테이블에 빈 행까지 이동, 값을 할당해서 충돌을 방지
+
+
+#### 모의 테스트
+
+완주하지 못한 선수 - [소스](./advanced/algorithm02/sol08-5-20/sol08-5-20.cpp)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/42576?language=cpp
+
+- 참가자 이름을 해시테이블로 추가. 키-값 : 이름-명 수
+- 완주한 선수 이름을 해시테이블에서 찾아 값을 1씩 줄임
+- 해시를 순회 값이 0이 아닌 키(이름)를 반환
+
+2중 for문으로는 해결못함
+
+
+
+### 코딩 테스트 준비물
+
+- 주최 기업마다 준비물이 다름
+- PC를 제공여부(보통 노트북)
+- 종이 펜 허용
 
 ### 코딩 테스트 저자의 글
 
