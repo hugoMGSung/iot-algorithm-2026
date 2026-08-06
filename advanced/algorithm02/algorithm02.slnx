@@ -8,10 +8,13 @@
   <Project Path="sol05-4-04/sol05-4-04.vcxproj" Id="be139fd9-e749-48fa-b899-d4dc31941f07" />
   <Project Path="sol06-3-08/sol06-3-08.vcxproj" Id="0990407d-bc9d-4204-acf1-301ac232cf93" />
   <Project Path="sol06-4-12/sol06-4-12.vcxproj" Id="ae8c617f-b729-4917-bcc9-34536c43fb7e" />
+  <Project Path="sol06-4-14/sol06-4-14.vcxproj" Id="dc5e9121-fffb-4165-a7ab-4cc74b1a6096" />
   <Project Path="sol07-2-15/sol07-2-15.vcxproj" Id="4281efb2-1583-4980-a146-a9764d709c82" />
   <Project Path="sol07-3-16/sol07-3-16.vcxproj" Id="f9d636db-331f-466d-ab5f-b074840dafc1" />
   <Project Path="sol08-5-20/sol08-5-20.vcxproj" Id="89da1c85-e9cc-47ea-b7ec-74a539da9e34" />
   <Project Path="sol08-5-27/sol08-5-27.vcxproj" Id="c5b5adc2-18e6-4320-a74b-8a206bd9d040" />
   <Project Path="sol09-4-28/sol09-4-28.vcxproj" Id="e92b1521-8367-4f2e-972b-a96b37cfbbdf" />
-  <Project Path="sol14-4-14/sol14-4-14.vcxproj" Id="dc5e9121-fffb-4165-a7ab-4cc74b1a6096" />
+  <Project Path="sol09-5-31/sol09-5-31.vcxproj" Id="df212360-a5be-4879-97ce-f739155fcc92" />
+  <Project Path="sol11-4-36/sol11-4-36.vcxproj" Id="d3b6b9d7-9be2-4adc-8830-e618393f70ae" />
+  <Project Path="sol99-9-99/sol99-9-99.vcxproj" Id="fc674990-8037-4bd1-bbee-7492bc2c0355" />
 </Solution>

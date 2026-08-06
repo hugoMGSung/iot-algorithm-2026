@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4281efb2-1583-4980-a146-a9764d709c82}</ProjectGuid>
-    <RootNamespace>sol07215</RootNamespace>
+    <ProjectGuid>{df212360-a5be-4879-97ce-f739155fcc92}</ProjectGuid>
+    <RootNamespace>sol09531</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,8 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\sol06-4-14\sol06-4-14.cpp" />
-    <ClCompile Include="sol07-2-15.cpp" />
+    <ClCompile Include="sol09-5-31.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
